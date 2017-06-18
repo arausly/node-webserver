@@ -30,19 +30,13 @@ app.use((req,res,next)=>{
 	 next();
 });
 
-app.use((req,res,next)=>{
-	res.render('maintenance',{
-	 distressMsg:"Sorry, we are having a liitle trouble here, but will be back."
-	});
-	next();
-})
 
 app.use(express.static(`${__dirname}/public`)); 
 
 app.get('/',(req,res,next)=>{
 	res.render('home',{
 		currentPage:'Home Page',
-		welcomeMsg:"Welcome, glad to have you here"
+		welcomeMsg:"Welcome, glad to have you here"it
 	});
 });
 
