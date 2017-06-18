@@ -58,6 +58,9 @@ app.get('/bad',(req,res,next)=>{
 	 });
 })
 
-app.listen(9000,()=>{
-	console.log('server is running on port 9000');
+let port  = process.env.PORT || 9000;
+
+
+app.listen(port,()=>{
+	console.log(`server is running on port ${port}`);
 });
