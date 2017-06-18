@@ -17,6 +17,7 @@ hbs.registerHelper('Capitalize',(text)=>{
 
 app.set('view engine','hbs');
 
+app.use(express.static(`${__dirname}/public`)); 
 
 app.use((req,res,next)=>{
 	let timestamp = new Date().toLocaleDateString();
@@ -31,12 +32,11 @@ app.use((req,res,next)=>{
 });
 
 
-app.use(express.static(`${__dirname}/public`)); 
 
 app.get('/',(req,res,next)=>{
 	res.render('home',{
 		currentPage:'Home Page',
-		welcomeMsg:"Welcome, glad to have you here"it
+		welcomeMsg:"Welcome, glad to have you here"
 	});
 });
 
